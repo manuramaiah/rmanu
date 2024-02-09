@@ -1,0 +1,275 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Application Form</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Include Bootstrap JS (jQuery and Popper.js required) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        font-family: "Roboto", sans-serif;
+        color: #0c0c0c;
+        background-color: #f8f8f8;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .signout-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .signout-btn:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+
+<body>
+<!-- <div class="hero_area">-->
+ <header class="header_section" style="background-color:black">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="#">
+            <span>Yours Bank</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Conatact Us
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+    </header>
+
+
+<div class="container" style="background-color:">
+  <h2>Registration Form</h2>
+  <form action="/form/" method="post"  >
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="user_name" required>
+
+    <label for="dob">DOB:</label>
+    <input type="date" id="dob" name="date_of_birth" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone_number" required>
+
+    <label for="mail">Mail ID:</label>
+    <input type="email" id="mail" name="mail_id" required>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" required></textarea>
+
+    <label for="district">District:</label>
+    <select id="district" name="district" required onchange="updateBranches()">
+            <option value="">Select a district</option>
+            <option value="trivandrum">Trivandrum</option>
+            <option value="kollam">Kollam</option>
+            <option value="pathanamthitta">Pathanamthitta</option>
+            <option value="alappuzha">Alappuzha</option>
+            <option value="kottayam">Kottayam</option>
+            <option value="idukki">Idukki</option>
+            <option value="ernakulam">Ernakulam</option>
+            <option value="thrissur">Thrissur</option>
+            <option value="palakkad">Palakkad</option>
+            <option value="malappuram">Malappuram</option>
+            <option value="kozhikode">Kozhikode</option>
+            <option value="wayanad">Wayanad</option>
+            <option value="kannur">Kannur</option>
+            <option value="kasaragod">Kasaragod</option>
+
+      <!-- Add more districts as needed -->
+    </select>
+
+    <label for="branch">Branch:</label>
+    <select id="branch" name="branch" required>
+            <option value="">Select</option>
+
+    </select>
+    <label for="accountType">Account Type:</label>
+    <select id="accountType" name="type_of_account" required>
+      <option value="checking">---------</option>
+      <option value="savings">Savings Account</option>
+      <option value="current">Current Account</option>
+      <option value="fixed">Fixed Account</option>
+      <option value="loan">Loan Account</option>
+      <option value="nri">NRI Account</option>
+      <option value="recurring">RD Account</option>
+
+      <!-- Add more account types as needed -->
+    </select>
+
+    <label>Materials Provide:</label>
+    <input type="checkbox" id="debitCard" name="materials_provided" value="debitCard">
+    <label for="debitCard">Debit Card</label>
+
+    <input type="checkbox" id="creditCard" name="materials_provided" value="creditCard">
+    <label for="creditCard">Credit Card</label>
+
+    <input type="checkbox" id="chequeBook" name="materials_provided" value="chequeBook">
+    <label for="chequeBook">Cheque Book</label>
+
+    <!-- Add more materials as needed -->
+
+    <button type="submit">Submit</button>
+  </form>
+
+</div>
+
+
+<script>
+function updateBranches() {
+
+    var districtSelect = document.getElementById("district");
+    var branchSelect = document.getElementById("branch");
+
+    // Clear existing options
+    branchSelect.innerHTML = '<option value="null">-------</option>';
+
+    // Get selected district
+    var selectedDistrict = districtSelect.value;
+
+
+    // Fetch branches based on the selected district (replace this with your logic)
+    var branches = getBranches(selectedDistrict);
+
+    // Populate the branch select with new options
+    branches.forEach(function (branch) {
+        var option = document.createElement("option");
+        option.value = branch;
+        option.text = branch;
+        branchSelect.add(option);
+    });
+
+
+}
+
+function getBranches(district) {
+    // Replace this with your logic to fetch branches based on the selected district
+    // Example: You can have a dictionary mapping districts to branches
+    var branchMapping = {
+        "trivandrum": ["Attingal", "Kattakkada", "Venjaramoodu", "Neyyattinkara","Varkala"],
+        "kollam": ["Karunagappally", "Anjal", "Kadakkal", "Kottarakkara","Kottiyam"],
+        "pathanamthitta": ["Adoor", "Thiruvalla", "Ranni", "Konni","Omalloor"],
+        "alappuzha": ["Cherthala", "Mannar", "Mavelikkara", "Haripad","Kayamkulam"],
+        "kottayam": ["Pala", "Kanjirapally", "Manarkadu", "Mundakkayam","Ettumanoor"],
+        "idukki": ["Kattappana", "Kumily", "Thodupuzha", "Nedumkandam","Munnar"],
+        "ernakulam": ["Edapally", "Vytila", "Aluva", "Nettoor","Kalamaserry"],
+        "thrissur": ["Chalakudi", "Athirapally","Wadakkanchery", "Irinjalakuda","Guruvayur"],
+        "palakkad": ["Tattamangalam", "Mannarkkad", "Shoranur", "Palakuzhy","Manissery"],
+        "malappuram": ["Tirurangadi", "Oorakam", "Parappur", "Mankada","Athavanad"],
+        "kozhikode": ["Beypore", "Koodaranji", "Feroke","Balussery","Ramanattukara"],
+        "wayanad": ["Mananthavady", "Thirunelli", "Panamaram", "Thavinjal","Sulthan Bathery"],
+        "kannur": ["Thalassery", "Payyanur", "Taliparamba", "Kuthuparamba","Mattannur"],
+        "kasargod": ["Manjeshwar", "Chemnad", "Ajanur", "Kanhangad","Puthur"],
+
+        // Add more branches for other districts
+    };
+
+    return branchMapping[district] || [];
+}
+</script>
+
+</body>
+</html>
